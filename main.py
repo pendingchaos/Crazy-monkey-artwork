@@ -161,10 +161,10 @@ def main(request):
 """ % ("%", header), mimetype="text/html")
     
     try:
-        with open("../client"+path, "r") as f:
+        with open("client/"+path, "r") as f:
             return werkwrappers.Response(f.read().replace("!!insertheader!!", header), mimetype="text/html")
     except IOError:
-        with open("../client/404.html", "r") as f:
+        with open("client/404.html", "r") as f:
             return werkwrappers.Response(f.read().replace("!!insertheader!!", header), status=404, mimetype="text/html")
 
 if __name__ == '__main__':
